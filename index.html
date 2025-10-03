@@ -22,55 +22,261 @@
         <h1 class="text-[20px] text-[#2C2C2C] font-semibold italic">TechStore</h1>
       </div>
       <ul class="flex gap-[30px] text-[16px] font-bold ">
-        <li class="cursor-pointer text-[#2C2C2C] hover:underline ">Home</li>
-        <li class="cursor-pointer text-[#2C2C2C] hover:underline">Products</li>
-        <li class="cursor-pointer text-[#2C2C2C] hover:underline">Reviews</li>
-        <li class="cursor-pointer text-[#2C2C2C] hover:underline">Contact</li>
+        <li class="cursor-pointer text-[#2C2C2C] hover:underline "><a href="#home">Home</a></li>
+        <li class="cursor-pointer text-[#2C2C2C] hover:underline"><a href="#products">Products</a></li>
+        <li class="cursor-pointer text-[#2C2C2C] hover:underline"><a href="#reviews">Reviews</a></li>
+        <li class="cursor-pointer text-[#2C2C2C] hover:underline"><a href="#contacts">Contacts</a></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <div class="max-w-full h-[600px] bg-[#F5F6F8] text-center bg-no-repeat bg-cover bg-top"
-      style="background-image: url('static/profile.jpg');">
-      <div class="py-[180px]">
-        <h1 class="text-6xl font-bold text-[#030213] align-middle">Premium Tech Products</h1>
-        <h1 class="text-6xl font-bold text-[#030213]">For Everyone </h1>
-        <p class="text-gray-600">Discover the latest technology gadgets and accessories. From smartphones to smart</p>
-        <p class="text-gray-600">home devices, we have everything you need to stay connected and productive.</p>
+    <section id="home">
+      <div class="max-w-full h-[600px] bg-[#F5F6F8] text-center bg-no-repeat bg-cover bg-top"
+        style="background-image: url('static/profile.jpg');">
+        <div class="py-[180px]">
+          <h1 class="text-6xl font-bold text-[#030213] align-middle">Premium Tech Products</h1>
+          <h1 class="text-6xl font-bold text-[#030213]">For Everyone </h1>
+          <p class="text-gray-600">Discover the latest technology gadgets and accessories. From smartphones to smart</p>
+          <p class="text-gray-600">home devices, we have everything you need to stay connected and productive.</p>
 
-        <button
-          class="bg-black text-[#ffff] h-[40px] w-[120px] whitespace-nowrap mt-[20px] rounded-lg align-middle">Shop Now
-          <i class="fa-solid fa-arrow-right"></i> </button>
-        <button class="bg-[#dcd5d5] text-black h-[40px] w-[120px] whitespace-nowrap mt-[20px] rounded-lg align-middle">
-          Learn More </button>
-
-      </div>
-      <div>
-        <h1 class="text-6xl font-bold text-[#030213] align-middle relative mt-[40px]">Featured Products</h1>
-        <p class="align-middle text-2xl text-gray-400">Discover our carefully curated selection of premium tech products
-        </p>
-      </div>
-      <!-- gird -->
-      <div>
-        <div class="grid grid-cols-3 gap-2.5 m-[30px]">
-          <div class=""><img src="static/laptop.png" alt="" width="382" height="382"></div>
-          <div class=""><img src="static/laptop.png" alt="" width="382" height="382"></div>
-          <div class=""><img src="static/laptop.png" alt="" width="382" height="382"></div>
-          <div class=""><img src="static/laptop.png" alt="" width="382" height="382"></div>
-          <div class=""><img src="static/laptop.png" alt="" width="382" height="382"></div>
-          <div class=""><img src="static/laptop.png" alt="" width="382" height="382"></div>
-          <div class=""><img src="static/laptop.png" alt="" width="382" height="382"></div>
-          <div class=""><img src="static/laptop.png" alt="" width="382" height="382"></div>
-          <div class=""><img src="static/laptop.png" alt="" width="382" height="382"></div>
-
-
+          <button
+            class="bg-black text-[#ffff] h-[40px] w-[120px] whitespace-nowrap mt-[20px] rounded-lg align-middle">Shop
+            Now
+            <i class="fa-solid fa-arrow-right"></i> </button>
+          <button
+            class="bg-[#dcd5d5] text-black h-[40px] w-[120px] whitespace-nowrap mt-[20px] rounded-lg align-middle">
+            Learn More </button>
         </div>
       </div>
+      <div class="w-full text-center">
+        <h1 class="text-6xl font-bold text-[#030213] relative mt-[27px]">Featured Products</h1>
+        <p class="text-2xl text-gray-400">Discover our carefully curated selection of premium tech products
+        </p>
+      </div>
+      </div>
+    </section>
+    <!-- grid -->
+    <section id="products">
+      <div class="grid grid-cols-3 w-full items-center  mt-10 gap-y-[60px] ">
+
+        <div
+          class=" justify-self-end bg-white p-4 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
+          <img src="static/laptop.png" alt="" class="h-[382px] w-[382px] object-cover group-hover:scale-110">
+          <p class="text-xl font-semibold text-gray-900">Premium Smartphone</p>
+          <p class="text-gray-600 mb-4  h-auto text-wrap">
+            Latest smartphone advanced camera and fast processor
+          </p>
+          <div class="text-2xl font-bold">$899.99</div>
+          <div class=" flex justify-center items-center   px-[16px] py-[8px]">
+            <button
+              class=" w-[334px] h-[36px]  rounded  bg-black text-[20px]  text-white active:bg-blue-800 transition ">Buy
+              Now</button>
+          </div>
+        </div>
+
+        <div
+          class=" justify-self-center bg-white p-4 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
+          <img src="static/earphone.png" alt="" class="h-[382px] w-[382px] object-cover group-hover:110">
+          <p class="text-xl font-semibold text-gray-900">Wireless Headphones</p>
+          <p class="text-gray-600 mb-4  text-wrap">High-quality noise-cancelling wireless headphones</p>
+          <div class="text-2xl font-bold">$299.99</div>
+          <div class=" flex justify-center items-center   px-[16px] py-[8px]">
+            <button
+              class=" w-[334px] h-[36px]  rounded  bg-black text-[20px]  text-white active:bg-blue-800 transition ">Buy
+              Now</button>
+          </div>
+        </div>
+
+        <div
+          class=" justify-self-start bg-white p-4 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
+          <img class="h-[382px] w-[382px] object-cover group-hover:110" src="static/watch.png" alt="">
+          <p class="text-xl font-semibold text-gray-900">Smart Watch</p>
+          <p class="text-gray-600 mb-4  text-wrap">Feature-rich smartwatch with health monitoring</p>
+          <div class="text-2xl font-bold">$399.99</div>
+          <div class=" flex justify-center items-center   px-[16px] py-[8px]">
+            <button
+              class=" w-[334px] h-[36px]  rounded  bg-black text-[20px]  text-white active:bg-blue-800 transition ">Buy
+              Now</button>
+          </div>
+        </div>
+
+        <div
+          class="justify-self-end  bg-white p-4 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
+          <img src="static/tab.png" alt="" class="h-[382px] w-[382px] object-cover group-hover:scale-110">
+          <p class="text-xl font-semibold text-gray-900">Tablet Pro</p>
+          <p class="text-gray-600 mb-4  text-wrap">
+            Professional tablet perfect for creativity and productivity
+          </p>
+          <div class="text-2xl font-bold">$649.99</div>
+          <div class=" flex  px-[16px] py-[8px]">
+            <button
+              class=" justify-center w-[334px] h-[36px]  rounded  bg-black text-[20px]  text-white active:bg-blue-800 transition ">Buy
+              Now</button>
+          </div>
+        </div>
+
+        <div
+          class="justify-self-center  bg-white p-4 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
+          <img src="static/keyboard.png" alt="" class="h-[382px] w-[382px] object-cover group-hover:scale-110">
+          <p class="text-xl font-semibold text-gray-900">Mechanical Keyboard</p>
+          <p class="text-gray-600 mb-4  text-wrap">
+            Premium mechanical keyboard with RGB backlighting
+          </p>
+          <div class="text-2xl font-bold">$159.99</div>
+          <div class=" flex    px-[16px] py-[8px]">
+            <button
+              class=" justify-center w-[334px] h-[36px]  rounded  bg-black text-[20px]  text-white active:bg-blue-800 transition ">Buy
+              Now</button>
+          </div>
+        </div>
+
+        <div
+          class="justify-self-start  bg-white p-4 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
+          <img src="static/speaker.png" alt="" class="h-[382px] w-[382px] object-cover group-hover:scale-110">
+          <p class="text-xl font-semibold text-gray-900">Bluetooth Speaker
+            $199.99</p>
+          <p class="text-gray-600 mb-4  text-wrap">Portable wireless speaker with premium sound quality
+          </p>
+          <div class="text-2xl font-bold">$199.99</div>
+          <div class=" flex justify-center items-center   px-[16px] py-[8px]">
+            <button
+              class=" justify-center w-[334px] h-[36px]  rounded  bg-black text-[20px]  text-white active:bg-blue-800 transition ">Buy
+              Now</button>
+          </div>
+        </div>
+
+        <div
+          class="justify-self-end  bg-white p-4 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
+          <img src="static/mouse.png" alt="" class="h-[382px] w-[382px] object-cover group-hover:scale-110">
+          <p class="text-xl font-semibold text-gray-900">Gaming Mouse
+          </p>
+          <p class="text-gray-600 mb-4  text-wrap">High-precision gaming mouse with customizable buttons</p>
+          <div class="text-2xl font-bold">$79.99</div>
+          <div class=" flex     px-[16px] py-[8px]">
+            <button
+              class=" justify-center w-[334px] h-[36px]  rounded  bg-black text-[20px]  text-white active:bg-blue-800 transition ">Buy
+              Now</button>
+          </div>
+        </div>
+
+        <div
+          class="justify-self-center  bg-white p-4 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
+          <img src="static/webcam.png" alt="" class="h-[382px] w-[382px] object-cover group-hover:scale-110">
+          <p class="text-xl font-semibold text-gray-900">HD Webcam
+          </p>
+          <p class="text-gray-600 mb-4  text-wrap">4K webcam perfect for video calls and streaming
+          </p>
+          <div class="text-2xl font-bold">$129.99</div>
+          <div class=" flex   px-[16px] py-[8px]">
+            <button
+              class=" justify-center w-[334px] h-[36px]  rounded  bg-black text-[20px]  text-white active:bg-blue-800 transition ">Buy
+              Now</button>
+          </div>
+        </div>
+
+        <div
+          class="justify-self-start  bg-white p-4 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
+          <img src="static/powerbank.png" alt="" class="h-[382px] w-[382px] object-cover group-hover:sclae-110">
+          <p class="text-xl font-semibold text-gray-900">Power Bank
+          </p>
+          <p class="text-gray-600 mb-4  text-wrap">High-capacity portable charger for all your devices</p>
+          <div class="text-2xl font-bold">$49.99</div>
+          <div class=" flex  justify-center items-center px-[16px] py-[8px]">
+            <button
+              class=" justify-center w-[334px] h-[36px]  rounded  bg-black text-[20px]  text-white active:bg-blue-800 transition ">Buy
+              Now</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- testimonial -->
+    <section id="reviews" class="w-auto h-[700px] bg-[#F9FAFB] flex flex-col items-center justify-center">
+      <div class="flex flex-col items-center mt-20">
+        <p class="text-5xl">What Our Customers Say</p>
+        <p class="text-gray-800">Read testimonials from our satisfied customers</p>
+      </div>
 
 
 
-    </div>
+      <div class="flex items-center  gap-8 mt-4">
+        <div
+          class=" flex flex-col w-[382px] h-[208px] bg-[#FFFFFF] rounded-lg justify-around p-4 hover:shadow-2xl scale-110 transation">
+          <div class="flex items-center ">
+            <div>
+              <img src="static/avatar4.jpg" alt="" class="w-10 h-10 rounded-full object-cover">
+            </div>
+            <div>
+              <p class="text-xl">Borhan</p>
+              <div class="flex text-yellow-700">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-wrap italic">"Amazing quality products and fast shipping! The smartphone I bought exceeded my
+            expectations. Highly
+            recommend TechStore for all your tech needs."</p>
+        </div>
+
+        <div
+          class=" flex flex-col w-[382px] h-[208px] bg-[#FFFFFF] rounded-lg justify-around p-4 hover:shadow-2xl scale-110 transation">
+          <div class="flex items-center ">
+            <div>
+              <img src="static/avatar5.jpg" alt="" class="w-10 h-10 rounded-full object-cover">
+            </div>
+            <div>
+              <p class="text-xl">Alexa</p>
+              <div class="flex text-yellow-700">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-wrap italic">"Amazing quality products and fast shipping! The smartphone I bought exceeded my
+            expectations. Highly
+            recommend TechStore for all your tech needs."</p>
+        </div>
+
+        <div
+          class=" flex flex-col w-[382px] h-[208px] bg-[#FFFFFF] rounded-lg justify-around p-4 font-sans hover:shadow-2xl scale-110 transation">
+          <div class="flex items-center ">
+            <div>
+              <img src="static/avatar3.jpg" alt="" class="fill-zinc-50  w-10 h-10 rounded-full object-cover">
+            </div>
+            <div>
+              <p class="text-xl">Robin</p>
+              <div class="flex text-yellow-700">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-wrap italic">"Amazing quality products and fast shipping! The smartphone I bought exceeded my
+            expectations. Highly
+            recommend TechStore for all your tech needs."</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacts " class="text-center"  >
+      <p class="text-3xl font-bold">Get In Touch</p>
+      <p class="text-gray-500 text-wrap">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+      <div>
+        
+      </div>
+    </section>
   </main>
   <footer>
 
