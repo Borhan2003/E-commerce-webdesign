@@ -5,15 +5,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>TechStore</title>
   <link href="./src/output.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-  <h1 class="text-blue-10000 font-bold underline">
-    Hello world!
-  </h1>
+  <header class="w-full h-[60px] flex items-center  border-b  border-gray-300">
+    <nav class="flex justify-around items-center fixed top-0  w-full bg-[#FFFFFF] ">
+
+      <div class="flex items-center h-[32px] w-[150px] gap-2 ">
+        <i class="fa-solid fa-bag-shopping fa-xl"></i>
+        <h1 class="text-[20px] text-[#2C2C2C] font-semibold italic">TechStore</h1>
+      </div>
+      <ul class="flex gap-[30px] text-[16px] font-bold ">
+        <li class="cursor-pointer text-[#2C2C2C] hover:underline ">Home</li>
+        <li class="cursor-pointer text-[#2C2C2C] hover:underline">Products</li>
+        <li class="cursor-pointer text-[#2C2C2C] hover:underline">Reviews</li>
+        <li class="cursor-pointer text-[#2C2C2C] hover:underline">Contact</li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="max-w-full h-[600px] bg-[#F5F6F8] text-center bg-no-repeat bg-cover bg-top"
+      style="background-image: url('static/profile.jpg');">
+      <div class="py-[180px]">
+        <h1 class="text-6xl font-bold text-[#030213] align-middle">Premium Tech Products</h1>
+        <h1 class="text-6xl font-bold text-[#030213]">For Everyone </h1>
+        <p class="text-gray-600">Discover the latest technology gadgets and accessories. From smartphones to smart</p>
+        <p class="text-gray-600">home devices, we have everything you need to stay connected and productive.</p>
+
+        <button
+          class="bg-black text-[#ffff] h-[40px] w-[120px] whitespace-nowrap mt-[20px] rounded-lg align-middle">Shop Now
+          <i class="fa-solid fa-arrow-right"></i> </button>
+        <button class="bg-[#dcd5d5] text-black h-[40px] w-[120px] whitespace-nowrap mt-[20px] rounded-lg align-middle">
+          Learn More </button>
+
+      </div>
+      <div>
+        <h1 class="text-6xl font-bold text-[#030213] align-middle relative mt-[40px]">Featured Products</h1>
+        <p class="align-middle text-2xl text-gray-400">Discover our carefully curated selection of premium tech products
+        </p>
+      </div>
+      <!-- gird -->
+      <div>
+        <div class="grid grid-cols-3 gap-2.5 m-[30px]">
+          <div class=""><img src="static/laptop.png" alt="" width="382" height="382"></div>
+          <div class=""><img src="static/laptop.png" alt="" width="382" height="382"></div>
+          <div class=""><img src="static/laptop.png" alt="" width="382" height="382"></div>
+          <div class=""><img src="static/laptop.png" alt="" width="382" height="382"></div>
+          <div class=""><img src="static/laptop.png" alt="" width="382" height="382"></div>
+          <div class=""><img src="static/laptop.png" alt="" width="382" height="382"></div>
+          <div class=""><img src="static/laptop.png" alt="" width="382" height="382"></div>
+          <div class=""><img src="static/laptop.png" alt="" width="382" height="382"></div>
+          <div class=""><img src="static/laptop.png" alt="" width="382" height="382"></div>
+
+
+        </div>
+      </div>
+
+
+
+    </div>
+  </main>
+  <footer>
+
+  </footer>
 </body>
 
 </html>
