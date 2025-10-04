@@ -22,7 +22,7 @@
         <h1 class="text-[20px] text-[#2C2C2C] font-semibold italic">TechStore</h1>
       </div>
       <ul class="flex gap-[30px] text-[16px] font-bold ">
-        <li class="cursor-pointer text-[#2C2C2C] hover:underline "><a href="#home">Home</a></li>
+        <li class="cursor-pointer text-[#2C2C2C] hover:underline  "><a href="#home">Home</a></li>
         <li class="cursor-pointer text-[#2C2C2C] hover:underline"><a href="#products">Products</a></li>
         <li class="cursor-pointer text-[#2C2C2C] hover:underline"><a href="#reviews">Reviews</a></li>
         <li class="cursor-pointer text-[#2C2C2C] hover:underline"><a href="#contacts">Contacts</a></li>
@@ -41,11 +41,11 @@
           <p class="text-gray-600">home devices, we have everything you need to stay connected and productive.</p>
 
           <button
-            class="bg-black text-[#ffff] h-[40px] w-[120px] whitespace-nowrap mt-[20px] rounded-lg align-middle">Shop
+            class="bg-black text-[#ffff] h-[40px] w-[120px] whitespace-nowrap mt-[20px] rounded-lg align-middle hover:scale-105 transition">Shop
             Now
             <i class="fa-solid fa-arrow-right"></i> </button>
           <button
-            class="bg-[#dcd5d5] text-black h-[40px] w-[120px] whitespace-nowrap mt-[20px] rounded-lg align-middle">
+            class="bg-[#dcd5d5] text-black h-[40px] w-[120px] whitespace-nowrap mt-[20px] rounded-lg align-middle hover:scale-105 hover:bg-gray-400 transition">
             Learn More </button>
         </div>
       </div>
@@ -194,14 +194,14 @@
 
     <!-- testimonial -->
     <section id="reviews" class="w-auto h-[700px] bg-[#F9FAFB] flex flex-col items-center justify-center">
-      <div class="flex flex-col items-center mt-20">
+      <div class="flex flex-col items-center mt-10">
         <p class="text-5xl">What Our Customers Say</p>
         <p class="text-gray-800">Read testimonials from our satisfied customers</p>
       </div>
 
 
 
-      <div class="flex items-center  gap-8 mt-4">
+      <div class="flex items-center  gap-6 mt-4">
         <div
           class=" flex flex-col w-[382px] h-[208px] bg-[#FFFFFF] rounded-lg justify-around p-4 hover:shadow-2xl scale-110 transation">
           <div class="flex items-center ">
@@ -270,15 +270,170 @@
       </div>
     </section>
 
-    <section id="contacts " class="text-center"  >
-      <p class="text-3xl font-bold">Get In Touch</p>
-      <p class="text-gray-500 text-wrap">Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
-      <div>
-        
+    <!-- contact -->
+
+    <section id="contacts " w-full h-[600px]>
+      <div class="text-center">
+        <p class="text-3xl font-bold">Get In Touch</p>
+        <p class="text-gray-500 text-wrap">Have questions? We'd love to hear from you. Send us a message and we'll
+          respond
+          as soon as possible.</p>
+
+      </div>
+      <div class="flex items-center justify-around pt-10">
+
+        <div class="flex flex-col gap-4">
+          <div class="text-2xl font-medium">Contact Information</div>
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-location-dot "></i>
+            <div>
+              <p class="text-2xl font-bold">Address</p>
+
+              <p class="text-gray-600">123 Tech Street, Silicon Valley, CA 94000</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-phone"></i>
+            <div>
+              <p class="text-2xl font-bold">Phone
+              </p>
+              <p class="text-gray-600">(555) 123-4567</p>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-envelope"></i>
+            <div>
+              <p class="text-2xl font-bold">Email
+              </p>
+              <p class="text-gray-600">info@techstore.com</p>
+            </div>
+          </div>
+          <div>
+            <p class="text-2xl font-medium">Business Hours </p>
+            <p class="text-gray-500"> Monday - Friday: 9:00 AM - 8:00 PM</p>
+            <p class="text-gray-500">Saturday: 10:00 AM - 6:00 PM</p>
+            <p class="text-gray-500">Sunday: 12:00 PM - 5:00 PM</p>
+          </div>
+        </div>
+
+        <div>
+          <form class=" w-[100%] h-auto  space-y-4 p-2 border rounded-2xl">
+
+            <div>
+              <label class=" text-gray-700 font-medium mb-1">Name</label>
+              <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-2 " required>
+            </div>
+
+            <div>
+              <label class=" text-gray-700 font-medium mb-1">Email</label>
+              <input type="email" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-2"required>
+            </div>
+
+            <div>
+              <label class=" text-gray-700 font-medium mb-1">Message</label>
+              <textarea class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-2"></textarea>
+            </div>
+
+            <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+              Submit
+            </button>
+
+          </form>
+
+        </div>
       </div>
     </section>
+
+
+    <!-- newsletter -->
+    <section class="w-full h-[500px] bg-black mt-25 flex flex-col items-center justify-center gap-8">
+      <i class="fa-solid fa-envelope text-white text-5xl"></i>
+      <p class="text-4xl font-bold text-white">Stay Updated with Latest Tech</p>
+      <div>
+        <p class="text-white text-xl text-wrap">Subscribe to our newsletter and be the first to know about new products,
+        </p>
+        <p class="text-white text-xl"> exclusive deals, and tech insights.</p>
+      </div>
+
+      <div class="flex justify-center-center gap-3">
+        <input type="email" class="w-100 h-10 rounded-lg bg-[#1D1C2B] text-white text-center"
+          placeholder="Enter Your Email Here">
+        <button class="w-40 h-10 text-black rounded-lg bg-white focus:outline-2 active:bg-amber-100">Subscribe</button>
+      </div>
+      <div>
+        <p class="text-gray-500">We respect your privacy unsubscribe any time </p>
+      </div>
+
+    </section>
   </main>
+
+
   <footer>
+
+    <div class="bg-gray-900 text-white py-8 h-70">
+      <div class="container grid grid-cols-4 justify-center items-center justify-items-center">
+
+        <div class="flex flex-col gap-3">
+          <div class="flex items-center gap-1">
+            <i class="fa-solid fa-bag-shopping  text-4xl"></i>
+            <p class="text-white font-medium">TechStore</p>
+          </div>
+          <p class="text-gray-600 max-w-xs text-wrap">Your trusted destination for premium technology
+            products and exceptional customer service.</p>
+          <div class="flex gap-2">
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-instagram"></i>
+            <i class="fa-brands fa-square-youtube"></i>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4 ">Quick Links</h4>
+          <ul class="gap-y-2 text-gray-300">
+            <li><a href="#home" class="hover:text-white transition">Home</a></li>
+            <li><a href="#products" class="hover:text-white transition">Products</a></li>
+            <li><a href="#reviews" class="hover:text-white transition">Reviews</a></li>
+            <li><a href="#contacts" class="hover:text-white transition">Contacts</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4 ">Categories</h4>
+          <ul class="gap-y-2 text-gray-300">
+            <li><a href="#" class="hover:text-white transition">Smartphones</a></li>
+            <li><a href="#" class="hover:text-white transition">Laptops</a></li>
+            <li><a href="#" class="hover:text-white transition">Audio</a></li>
+            <li><a href="#" class="hover:text-white transition">Accessories</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-lg font-semibold mb-4 ">Support</h4>
+          <ul class="gap-y-2 text-gray-300">
+            <li><a href="#" class="hover:text-white transition">Help Center</a></li>
+            <li><a href="#" class="hover:text-white transition">Shipping Info</a></li>
+            <li><a href="#" class="hover:text-white transition">Returns</a></li>
+            <li><a href="#" class="hover:text-white transition">Warranty</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+      <div class="border-t border-gray-600 mt-4">
+        <div class="flex justify-evenly items-center gap-4 my-9">
+          <p class="text-gray-400 text-sm">&copy; 2025 TechStore. All rights reserved.</p>
+          <div class="flex gap-x-4 text-gray-400 ">
+            <a href="#" class="hover:text-white transition">Privacy Policy</a>
+            <a href="#" class="hover:text-white transition">Terms of Service</a>
+            <a href="#" class="hover:text-white transition">Cookie Policy</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
 
   </footer>
 </body>
