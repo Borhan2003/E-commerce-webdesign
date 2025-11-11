@@ -1,416 +1,249 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TechStore</title>
-  <link href="./src/output.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
-<body>
-  <header class="container mx-auto max-w-full">
-    <nav
-      class=" flex justify-between items-center fixed top-0 w-full bg-[#FFFFFF] px-4 py-4 sm:px-6 border-b border-gray-300 z-50">
+<body class="bg-gray-100">
 
-      <div class="flex items-center h-[32px] w-[150px] gap-2 ">
-        <i class="fa-solid fa-bag-shopping fa-xl lg:fa-6xl"></i>
-        <h1 class="   text-2xl sm:text-[20px] text-[#2C2C2C] font-semibold italic">TechStore</h1>
+  <!-- Navbar -->
+  <header class="fixed top-0 w-full z-50 bg-white border-b border-gray-300">
+    <nav class="container mx-auto flex justify-between items-center px-4 sm:px-6 py-4">
+      <div class="flex items-center gap-2 h-[32px] w-[150px]">
+        <i class="fa-solid fa-bag-shopping fa-xl text-blue-600"></i>
+        <h1 class="text-2xl sm:text-[20px] text-gray-900 font-semibold italic">TechStore</h1>
       </div>
-      <ul class=" hidden md:flex gap-[20px] text-[16px] font-bold ">
-        <li class="cursor-pointer text-[#2C2C2C] hover:underline"><a href="#home">Home</a></li>
-        <li class="cursor-pointer text-[#2C2C2C] hover:underline"><a href="#products">Products</a></li>
-        <li class="cursor-pointer text-[#2C2C2C] hover:underline"><a href="#reviews">Reviews</a></li>
-        <li class="cursor-pointer text-[#2C2C2C] hover:underline"><a href="#contacts">Contacts</a></li>
+      <ul class="hidden md:flex gap-5 text-[16px] font-bold text-gray-900">
+        <li><a href="#home" class="menu-item  hover:underline">Home</a></li>
+        <li><a href="#products" class="menu-item  hover:underline">Products</a></li>
+        <li><a href="#reviews" class="menu-item  hover:underline">Reviews</a></li>
+        <li><a href="#contacts" class="menu-item  hover:underline">Contacts</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section id="home" class="scroll-mt-24">
-      <div
-        class="max-w-full mx-auto max-h-[420px] bg-[#F5F6F8] text-center bg-cover bg-top bg-[url('static/profile.jpg')]">
+  <main class="pt-12">
 
-        <div class="py-[80px] sm:py-[140px]">
-          <h1 class="text-3xl sm:text-6xl font-bold text-[#030213] align-middle">Premium Tech Products</h1>
-          <h1 class="text-3xl sm:text-6xl font-bold text-[#030213]">For Everyone </h1>
-          <p class="text-gray-600">Discover the latest technology gadgets and accessories. From smartphones to smart</p>
-          <p class="text-gray-600">home devices, we have everything you need to stay connected and productive.</p>
-
-          <div class="mt-6 flex justify-center gap-4">
-            <button class="bg-black text-[#ffff] px-4 py-2 rounded-lg whitespace-nowrap hover:scale-105 transition">Shop
-              Now <i class="fa-solid fa-arrow-right"></i></button>
-            <button
-              class="bg-[#dcd5d5] text-black px-4 py-2 rounded-lg whitespace-nowrap hover:scale-105 hover:bg-gray-400 transition">Learn
-              More</button>
+    <!-- Hero Section -->
+    <section id="home" class="scroll-mt-24 h-[90vh] relative">
+      <div class="swiper heroSwiper w-full h-full">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="static/earphone.png" class="w-full h-full object-cover" alt="Earphone">
           </div>
+          <div class="swiper-slide">
+            <img src="static/laptop.png" class="w-full h-full object-cover" alt="Laptop">
+          </div>
+          <div class="swiper-slide">
+            <img src="static/mouse.png" class="w-full h-full object-cover" alt="Mouse">
+          </div>
+        </div>
+
+        <!-- Controls -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </section>
+
+    <!-- Products Section with Cart -->
+    <section id="products" class="px-4 sm:px-6 lg:px-8 mt-12 scroll-mt-24">
+      <div class="flex flex-col lg:flex-row gap-8">
+        <!-- Product Grid -->
+        <div class="w-full lg:w-[75%]">
+          <h2 class="text-3xl font-bold mb-4 text-center">Featured Products</h2>
+          <div id="product-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+        </div>
+
+        <!-- Cart Section -->
+        <div id="cart-box" class="w-full lg:w-[25%] bg-white border rounded-2xl shadow-md p-6 h-fit sticky top-28">
+          <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-cart-shopping text-blue-600"></i> Cart
+          </h2>
+
+          <div class="text-lg text-gray-700">
+            <p>My balance: $<span id="balance" class="font-semibold">1000</span></p>
+            <p>Delivery Charge: $<span id="delivery" class="font-semibold">0</span>
+            </p>
+            <p>Total Items: <span id="cart-count" class="font-semibold">0</span></p>
+            <p>Total Value: $<span id="cart-total" class="font-semibold">0.00</span></p>
+          </div>
+
+          <form id="promo-form">
+            <label class="block text-gray-700 font-medium">Promo Code</label>
+            <input type="text" id="promo-code" placeholder="Enter code"
+              class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:ring-blue-600">
+            <button type="submit" id="apply_btn"
+              class="w-full bg-blue-600 text-white py-2 mt-2 rounded-lg hover:bg-blue-700 transition">Apply</button>
+            <button id="add_money"
+              class="w-full bg-blue-600 text-white py-2 mt-2 rounded-lg hover:bg-blue-700 transition">
+              ADD MONEY
+            </button>
+
+          </form>
+          <p id="confirm_message" class="mt-3 text-sm text-green-600 hidden"></p>
+          <p id="promo-message" class="mt-3 text-sm text-green-600 hidden">Promo applied!</p>
         </div>
       </div>
-      <section id="products" class="scroll-mt-24">
-        <div class="w-full text-center mt-8">
-          <h1 class="text-2xl sm:text-4xl font-bold text-[#030213] relative">Featured Products</h1>
-          <p class="text-lg sm:text-2xl text-gray-400 max-w-2xl mx-auto mt-2">Discover our carefully curated selection
-            of
-            premium tech products
-          </p>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-12 bg-gray-100">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2 class="text-3xl font-bold text-center mb-8">Customer Reviews</h2>
+        <div class="swiper reviewsSwiper w-full">
+          <div class="swiper-wrapper" id="comment-container"></div>
+          <div class="reviews-pagination"></div>
+          <div class="reviews-prev"></div>
+          <div class="reviews-next"></div>
         </div>
-        </div>
-      </section>
-      <!-- grid -->
-      <section id="products" class="px-4 sm:px-6 lg:px-8 mt-10 scroll-mt-24">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+      </div>
+    </section>
 
-          <div
-            class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
-            <img src="static/laptop.png" alt="" class="w-full aspect-square object-cover max-w-[382px] rounded-md">
-            <p class="text-xl font-semibold text-gray-900 mt-4">Premium Smartphone</p>
-            <p class="text-gray-600 mb-4 text-center ">Latest smartphone advanced camera and fast processor</p>
-            <div class="text-2xl font-bold">$899.99</div>
-            <div class="flex justify-center items-center px-[16px] py-[8px] w-full">
-              <button class="w-full h-10 rounded bg-black text-[18px] text-white active:bg-blue-800 transition">Buy
-                Now</button>
+    <!-- Contact Section -->
+    <section id="contacts" class="scroll-mt-24 w-full py-10">
+      <div class="text-center mb-6">
+        <p class="text-2xl sm:text-3xl font-bold">Get In Touch</p>
+        <p class="text-gray-500 mt-2">Have questions? We'd love to hear from you. Send us a message and we'll respond
+          as soon as possible.</p>
+      </div>
+      <div class="flex flex-col lg:flex-row gap-10 items-start justify-around px-4 sm:px-6">
+        <!-- Contact Info -->
+        <div class="flex flex-col gap-4">
+          <div class="text-2xl font-medium">Contact Information</div>
+          <div class="flex items-start gap-2">
+            <i class="fa-solid fa-location-dot mt-1"></i>
+            <div>
+              <p class="text-2xl font-bold">Address</p>
+              <p class="text-gray-600">123 Tech Street, Silicon Valley, CA 94000</p>
             </div>
           </div>
-
-          <div
-            class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
-            <img src="static/earphone.png" alt="" class="w-full aspect-square object-cover max-w-[382px] rounded-md">
-            <p class="text-xl font-semibold text-gray-900 mt-4">Wireless Headphones</p>
-            <p class="text-gray-600 mb-4 text-center ">High-quality noise-cancelling wireless headphones</p>
-            <div class="text-2xl font-bold">$299.99</div>
-            <div class="flex justify-center items-center px-[16px] py-[8px] w-full">
-              <button class="w-full h-10 rounded bg-black text-[18px] text-white active:bg-blue-800 transition">Buy
-                Now</button>
+          <div class="flex items-start gap-2">
+            <i class="fa-solid fa-phone mt-1"></i>
+            <div>
+              <p class="text-2xl font-bold">Phone</p>
+              <p class="text-gray-600">(555) 123-4567</p>
             </div>
           </div>
-
-          <div
-            class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
-            <img src="static/watch.png" alt="" class="w-full aspect-square object-cover max-w-[382px] rounded-md">
-            <p class="text-xl font-semibold text-gray-900 mt-4">Smart Watch</p>
-            <p class="text-gray-600 mb-4 text-center ">Feature-rich smartwatch with health monitoring</p>
-            <div class="text-2xl font-bold">$399.99</div>
-            <div class="w-full px-4 py-2">
-              <button class="w-full h-10 rounded bg-black text-[18px] text-white active:bg-blue-800 transition">Buy
-                Now</button>
+          <div class="flex items-start gap-2">
+            <i class="fa-solid fa-envelope mt-1"></i>
+            <div>
+              <p class="text-2xl font-bold">Email</p>
+              <p class="text-gray-600">info@techstore.com</p>
             </div>
           </div>
-
-          <div
-            class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
-            <img src="static/tab.png" alt="" class="w-full aspect-square object-cover max-w-[382px] rounded-md">
-            <p class="text-xl font-semibold text-gray-900 mt-4">Tablet Pro</p>
-            <p class="text-gray-600 mb-4 text-center ">Professional tablet perfect for creativity and
-              productivity</p>
-            <div class="text-2xl font-bold">$649.99</div>
-            <div class="w-full px-4 py-2">
-              <button class="w-full h-10 rounded bg-black text-[18px] text-white active:bg-blue-800 transition">Buy
-                Now</button>
-            </div>
+          <div>
+            <p class="text-2xl font-medium">Business Hours</p>
+            <p class="text-gray-500">Monday - Friday: 9:00 AM - 8:00 PM</p>
+            <p class="text-gray-500">Saturday: 10:00 AM - 6:00 PM</p>
+            <p class="text-gray-500">Sunday: 12:00 PM - 5:00 PM</p>
           </div>
-
-          <div
-            class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
-            <img src="static/keyboard.png" alt="" class="w-full aspect-square object-cover max-w-[382px] rounded-md">
-            <p class="text-xl font-semibold text-gray-900 mt-4">Mechanical Keyboard</p>
-            <p class="text-gray-600 mb-4 text-center ">Premium mechanical keyboard with RGB backlighting</p>
-            <div class="text-2xl font-bold">$159.99</div>
-            <div class="w-full px-4 py-2">
-              <button class="w-full h-10 rounded bg-black text-[18px] text-white active:bg-blue-800 transition">Buy
-                Now</button>
-            </div>
-          </div>
-
-          <div
-            class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
-            <img src="static/speaker.png" alt="" class="w-full aspect-square object-cover max-w-[382px] rounded-md">
-            <p class="text-xl font-semibold text-gray-900 mt-4">Bluetooth Speaker</p>
-            <p class="text-gray-600 mb-4 text-center ">Portable wireless speaker with premium sound quality</p>
-            <div class="text-2xl font-bold">$199.99</div>
-            <div class="w-full px-4 py-2">
-              <button class="w-full h-10 rounded bg-black text-[18px] text-white active:bg-blue-800 transition">Buy
-                Now</button>
-            </div>
-          </div>
-
-          <div
-            class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
-            <img src="static/mouse.png" alt="" class="w-full aspect-square object-cover max-w-[382px] rounded-md">
-            <p class="text-xl font-semibold text-gray-900 mt-4">Gaming Mouse</p>
-            <p class="text-gray-600 mb-4 text-center ">High-precision gaming mouse with customizable buttons
-            </p>
-            <div class="text-2xl font-bold">$79.99</div>
-            <div class="w-full px-4 py-2">
-              <button class="w-full h-10 rounded bg-black text-[18px] text-white active:bg-blue-800 transition">Buy
-                Now</button>
-            </div>
-          </div>
-
-          <div
-            class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
-            <img src="static/webcam.png" alt="" class="w-full aspect-square object-cover max-w-[382px] rounded-md">
-            <p class="text-xl font-semibold text-gray-900 mt-4">HD Webcam</p>
-            <p class="text-gray-600 mb-4 text-center ">4K webcam perfect for video calls and streaming</p>
-            <div class="text-2xl font-bold">$129.99</div>
-            <div class="w-full px-4 py-2">
-              <button class="w-full h-10 rounded bg-black text-[18px] text-white active:bg-blue-800 transition">Buy
-                Now</button>
-            </div>
-          </div>
-
-          <div
-            class="bg-white p-4 rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition duration-300 flex flex-col items-center">
-            <img src="static/powerbank.png" alt="" class="w-full aspect-square object-cover max-w-[382px] rounded-md">
-            <p class="text-xl font-semibold text-gray-900 mt-4">Power Bank</p>
-            <p class="text-gray-600 mb-4 text-center ">High-capacity portable charger for all your devices</p>
-            <div class="text-2xl font-bold">$49.99</div>
-            <div class="w-full px-4 py-2">
-              <button class="w-full h-10 rounded bg-black text-[18px] text-white active:bg-blue-800 transition">Buy
-                Now</button>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- testimonial -->
-      <section id="reviews"
-        class=" scroll-mt-24 w-auto bg-[#F9FAFB] flex flex-col items-center justify-center mt-12 px-4 py-10 ">
-        <div class="flex flex-col items-center   ">
-          <p class="text-3xl sm:text-5xl">What Our Customers Say</p>
-          <p class="text-gray-800 mt-2">Read testimonials from our satisfied customers</p>
         </div>
 
-
-
-        <div class=" flex flex-col lg:flex-row items-center gap-6 mt-6 w-full max-w-6xl">
-          <div class=" flex flex-col w-full md:w-[382px] bg-[#FFFFFF] rounded-lg p-4 hover:shadow-2xl transition">
-            <div class="flex items-center ">
-              <div class="flex items-center gap-3">
-                <img src="static/avatar4.jpg" alt="" class="w-10 h-10 rounded-full object-cover">
-              </div>
-              <div>
-                <p class="text-xl">Borhan</p>
-                <div class="flex text-yellow-700">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-              </div>
-            </div>
-            <p class="text-wrap italic">"Amazing quality products and fast shipping! The smartphone I bought exceeded my
-              expectations. Highly
-              recommend TechStore for all your tech needs."</p>
-          </div>
-
-          <div class="flex flex-col w-full md:w-[382px] bg-[#FFFFFF] rounded-lg p-4 hover:shadow-2xl transition">
-            <div class="flex items-center gap-3">
-              <img src="static/avatar5.jpg" alt="" class="w-10 h-10 rounded-full object-cover">
-              <div>
-                <p class="text-xl">Alexa</p>
-                <div class="flex text-yellow-700">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-              </div>
-            </div>
-            <p class="italic mt-3">"Amazing quality products and fast shipping! The smartphone I bought exceeded my
-              expectations. Highly recommend TechStore for all your tech needs."</p>
-          </div>
-
-          <div class="flex flex-col w-full md:w-[382px] bg-[#FFFFFF] rounded-lg p-4 hover:shadow-2xl transition">
-            <div class="flex items-center gap-3">
-              <img src="static/avatar3.jpg" alt="" class="w-10 h-10 rounded-full object-cover">
-              <div>
-                <p class="text-xl">Robin</p>
-                <div class="flex text-yellow-700">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                </div>
-              </div>
-            </div>
-            <p class="italic mt-3">"Amazing quality products and fast shipping! The smartphone I bought exceeded my
-              expectations. Highly recommend TechStore for all your tech needs."</p>
-          </div>
-        </div>
-      </section>
-
-
-      <!-- contact -->
-
-      <section id="contacts" class="w-full sm:mt-30 md:mt-60 lg:mt-17 lg:h-[600px] scroll-mt-24">
-        <div class="text-center">
-          <p class="text-2xl sm:text-3xl font-bold">Get In Touch</p>
-          <p class="text-gray-500 text-wrap sm:mt-10 lg:mt-0">Have questions? We'd love to hear from you. Send us a
-            message and we'll
-            respond
-            as soon as possible.</p>
-
-        </div>
-        <div
-          class="flex flex-col  sm:flex-col  gap-10 sm:gap-10 sm:items-center lg:flex-row items-center lg:justify-around pt-10">
-
-          <div class="flex flex-col gap-4">
-            <div class="text-2xl font-medium">Contact Information</div>
-            <div class="flex items-center gap-2">
-              <i class="fa-solid fa-location-dot "></i>
-              <div>
-                <p class="text-2xl font-bold">Address</p>
-
-                <p class="text-gray-600">123 Tech Street, Silicon Valley, CA 94000</p>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-2">
-              <i class="fa-solid fa-phone"></i>
-              <div>
-                <p class="text-2xl font-bold">Phone
-                </p>
-                <p class="text-gray-600">(555) 123-4567</p>
-              </div>
-            </div>
-
-            <div class="flex items-center gap-2">
-              <i class="fa-solid fa-envelope"></i>
-              <div>
-                <p class="text-2xl font-bold">Email
-                </p>
-                <p class="text-gray-600">info@techstore.com</p>
-              </div>
+        <!-- Contact Form -->
+        <div class="w-full lg:w-1/2">
+          <form class="w-full space-y-4 p-4 border rounded-2xl">
+            <div>
+              <label class="text-gray-700 font-medium mb-1 block">Name</label>
+              <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-2" required>
             </div>
             <div>
-              <p class="text-2xl font-medium">Business Hours </p>
-              <p class="text-gray-500"> Monday - Friday: 9:00 AM - 8:00 PM</p>
-              <p class="text-gray-500">Saturday: 10:00 AM - 6:00 PM</p>
-              <p class="text-gray-500">Sunday: 12:00 PM - 5:00 PM</p>
+              <label class="text-gray-700 font-medium mb-1 block">Email</label>
+              <input type="email" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-2" required>
             </div>
-          </div>
-
-          <div class="w-full lg:w-1/2">
-            <form class="w-full h-auto space-y-4 p-4 border rounded-2xl">
-              <div>
-                <label class="text-gray-700 font-medium mb-1 block">Name</label>
-                <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-2" required>
-              </div>
-
-              <div>
-                <label class="text-gray-700 font-medium mb-1 block">Email</label>
-                <input type="email" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-2" required>
-              </div>
-
-              <div>
-                <label class="text-gray-700 font-medium mb-1 block">Message</label>
-                <textarea class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-2"></textarea>
-              </div>
-
-              <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">Submit</button>
-            </form>
-          </div>
+            <div>
+              <label class="text-gray-700 font-medium mb-1 block">Message</label>
+              <textarea class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-2" required></textarea>
+            </div>
+            <button class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">Submit</button>
+          </form>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- newsletter -->
-      <section class="w-full bg-black mt-12 flex flex-col items-center justify-center gap-6 px-4 py-12">
-        <i class="fa-solid fa-envelope text-white text-4xl"></i>
-        <p class="text-2xl sm:text-4xl font-bold text-white">Stay Updated with Latest Tech</p>
-        <div>
-          <p class="text-white text-lg ">Subscribe to our newsletter and be the first to know about new products,
-          </p>
-          <p class="text-white text-xl"> exclusive deals, and tech insights.</p>
-        </div>
-
-        <div class="flex flex-col sm:flex-row items-center gap-3 mt-4">
-          <input type="email" class="w-full sm:w-[420px] h-10 rounded-lg bg-[#1D1C2B] text-white text-center"
-            placeholder="Enter Your Email Here">
-          <button
-            class="w-full sm:w-40  h-10 text-black rounded-lg bg-white focus:outline-2 active:bg-amber-100">Subscribe</button>
-        </div>
-        <div>
-          <p class="text-gray-500">We respect your privacy unsubscribe any time </p>
-        </div>
-
-      </section>
   </main>
 
-
-  <footer class="">
-
-    <div class="bg-gray-900 text-white py-8 h-200 sm:h-110 lg:h-70">
-      <div
-        class="container px-4 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-start">
-        <div class="flex flex-col gap-3">
-          <div class="flex items-center gap-1">
-            <i class="fa-solid fa-bag-shopping  text-4xl"></i>
-            <p class="text-white font-medium">TechStore</p>
-          </div>
-          <p class="text-gray-600 max-w-xs text-wrap">Your trusted destination for premium technology
-            products and exceptional customer service.</p>
-          <div class="flex gap-2">
-            <i class="fa-brands fa-facebook"></i>
-            <i class="fa-brands fa-instagram"></i>
-            <i class="fa-brands fa-square-youtube"></i>
-          </div>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white py-8">
+    <div
+      class="container px-4 sm:px-6 lg:px-8 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 justify-center items-start">
+      <div class="flex flex-col gap-3">
+        <div class="flex items-center gap-1">
+          <i class="fa-solid fa-bag-shopping text-4xl"></i>
+          <p class="text-white font-medium">TechStore</p>
         </div>
-
-        <div>
-          <h4 class="text-lg font-semibold mb-4 ">Quick Links</h4>
-          <ul class="gap-y-2 text-gray-300">
-            <li><a href="#home" class="hover:text-white transition">Home</a></li>
-            <li><a href="#products" class="hover:text-white transition">Products</a></li>
-            <li><a href="#reviews" class="hover:text-white transition">Reviews</a></li>
-            <li><a href="#contacts" class="hover:text-white transition">Contacts</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-lg font-semibold mb-4 ">Categories</h4>
-          <ul class="gap-y-2 text-gray-300">
-            <li><a href="#" class="hover:text-white transition">Smartphones</a></li>
-            <li><a href="#" class="hover:text-white transition">Laptops</a></li>
-            <li><a href="#" class="hover:text-white transition">Audio</a></li>
-            <li><a href="#" class="hover:text-white transition">Accessories</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="text-lg font-semibold mb-4 ">Support</h4>
-          <ul class="gap-y-2 text-gray-300">
-            <li><a href="#" class="hover:text-white transition">Help Center</a></li>
-            <li><a href="#" class="hover:text-white transition">Shipping Info</a></li>
-            <li><a href="#" class="hover:text-white transition">Returns</a></li>
-            <li><a href="#" class="hover:text-white transition">Warranty</a></li>
-          </ul>
+        <p class="text-gray-600 max-w-xs text-wrap">Your trusted destination for premium technology
+          products and exceptional customer service.</p>
+        <div class="flex gap-2">
+          <i class="fa-brands fa-facebook"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-square-youtube"></i>
         </div>
       </div>
 
+      <div>
+        <h4 class="text-lg font-semibold mb-4 ">Quick Links</h4>
+        <ul class="gap-y-2 text-gray-300">
+          <li><a href="#home" class="hover:text-white transition">Home</a></li>
+          <li><a href="#products" class="hover:text-white transition">Products</a></li>
+          <li><a href="#reviews" class="hover:text-white transition">Reviews</a></li>
+          <li><a href="#contacts" class="hover:text-white transition">Contacts</a></li>
+        </ul>
+      </div>
 
-      <div class="border-t border-gray-600 mt-4">
-        <div class="flex flex-col sm:flex-row justify-between items-center gap-4 my-6 px-4 sm:px-6">
-          <p class="text-gray-400 text-sm">&copy; 2025 TechStore. All rights reserved.</p>
-          <div class="flex gap-x-4 text-gray-400 ">
-            <a href="#" class="hover:text-white transition">Privacy Policy</a>
-            <a href="#" class="hover:text-white transition">Terms of Service</a>
-            <a href="#" class="hover:text-white transition">Cookie Policy</a>
-          </div>
-        </div>
+      <div>
+        <h4 class="text-lg font-semibold mb-4 ">Categories</h4>
+        <ul class="gap-y-2 text-gray-300">
+          <li><a href="#" class="hover:text-white transition">Smartphones</a></li>
+          <li><a href="#" class="hover:text-white transition">Laptops</a></li>
+          <li><a href="#" class="hover:text-white transition">Audio</a></li>
+          <li><a href="#" class="hover:text-white transition">Accessories</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-lg font-semibold mb-4 ">Support</h4>
+        <ul class="gap-y-2 text-gray-300">
+          <li><a href="#" class="hover:text-white transition">Help Center</a></li>
+          <li><a href="#" class="hover:text-white transition">Shipping Info</a></li>
+          <li><a href="#" class="hover:text-white transition">Returns</a></li>
+          <li><a href="#" class="hover:text-white transition">Warranty</a></li>
+        </ul>
       </div>
     </div>
 
+    <div class="border-t border-gray-600 mt-4">
+      <div class="flex flex-col sm:flex-row justify-between items-center gap-4 my-6 px-4 sm:px-6">
+        <p class="text-gray-400 text-sm">&copy; 2025 TechStore. All rights reserved.</p>
+        <div class="flex gap-x-4 text-gray-400">
+          <a href="#" class="hover:text-white transition">Privacy Policy</a>
+          <a href="#" class="hover:text-white transition">Terms of Service</a>
+          <a href="#" class="hover:text-white transition">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+    <button id="backToTop" class="hidden fixed bottom-4 right-4 bg-blue-500  p-3 rounded-full hover:bg-blue-600">
+      <i class="fa-solid fa-arrow-up"></i> </button>
 
   </footer>
+
+  <!-- JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>
