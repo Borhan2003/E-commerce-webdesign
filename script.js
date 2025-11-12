@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <p class="text-xl font-semibold text-gray-900 mt-4 text-center">${product.title}</p>
           <p class="text-gray-600 mb-4 text-center">${product.description.slice(0, 80)}...</p>
           <div class="text-2xl font-bold mb-2">$${product.price}</div>
+          <div class="text-yellow-500"><i class="fa-solid fa-star"></i> ${product.rating.rate }/5</div>
           <button class="w-full h-10 rounded bg-black text-white hover:bg-blue-800 transition add-to-cart">Add to Cart</button>
           <button class="w-full h-10 rounded bg-black text-white mt-2 hover:bg-blue-800 transition delete-cart">Remove from Cart</button>
         `;
