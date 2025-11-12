@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   fetchProducts();
 
-  // Promo & add money (guard for missing elements)
+  // Promo & add money 
   if (promoForm) {
     promoForm.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
         container.appendChild(slide);
       });
 
-      // initialize reviews swiper after slides are inserted
+    
       new Swiper('.reviewsSwiper', {
         loop: true,
         slidesPerView: 1,
@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   loadComments();
 
-  // ---- Scroll-based Navbar Highlight + BackToTop in single scroll listener
+  
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".menu-item");
   const backToTopBtn = document.querySelector("#backToTop");
@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let current = "";
 
     sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120; // account for fixed header
+      const sectionTop = section.offsetTop - 120;
       const sectionHeight = section.clientHeight;
       if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
         current = section.getAttribute("id");
