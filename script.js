@@ -230,3 +230,38 @@ document.addEventListener("DOMContentLoaded", () => {
     backToTopBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
   }
 });
+// Contact Form Validation + Thank You Message
+const contactForm = document.getElementById('contactForm');
+const thankYouMsg = document.getElementById('thankYouMsg');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+  
+    if (!name || !email || !message) {
+      alert('Please fill out all fields.');
+      return;
+    }
+    if(name.length < 3){
+        alert('at least  3 character in name');
+      return;
+    }
+
+    
+    if (!email.includes("@gmail.com") ) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+    
+
+
+    contactForm.classList.add('hidden');
+    thankYouMsg.classList.remove('hidden');
+  });
+}
+
